@@ -25,8 +25,19 @@ public class PartidaXadrez {
         tabuleiro.LugarDaPeca(peca, new PosicaoXadrez(coluna, linha).paraPosicao());
     }
     private void SetupInicial(){
-        LugarNovaPeca('b', 6 , new Torre(tabuleiro, Cor.BRANCA));
-        LugarNovaPeca('e',8 , new Rei(tabuleiro, Cor.PRETA));
-        LugarNovaPeca('e', 1, new Rei(tabuleiro, Cor.BRANCA));
+
+        LugarNovaPeca('c', 1, new Torre(tabuleiro, Cor.BRANCA));
+        LugarNovaPeca('c', 2, new Torre(tabuleiro, Cor.BRANCA));
+        LugarNovaPeca('d', 2, new Torre(tabuleiro, Cor.BRANCA));
+        LugarNovaPeca('e', 2, new Torre(tabuleiro, Cor.BRANCA));
+        LugarNovaPeca('e', 1, new Torre(tabuleiro, Cor.BRANCA));
+        LugarNovaPeca('d', 1, new Rei(tabuleiro, Cor.BRANCA));
+
+        LugarNovaPeca('c', 7, new Torre(tabuleiro, Cor.PRETA));
+        LugarNovaPeca('c', 8, new Torre(tabuleiro, Cor.PRETA));
+        LugarNovaPeca('d', 7, new Torre(tabuleiro, Cor.PRETA));
+        LugarNovaPeca('e', 7, new Torre(tabuleiro, Cor.PRETA));
+        LugarNovaPeca('e', 8, new Torre(tabuleiro, Cor.PRETA));
+        LugarNovaPeca('d', 8, new Rei(tabuleiro, Cor.PRETA));
     }
 }
