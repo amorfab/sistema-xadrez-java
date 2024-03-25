@@ -1,6 +1,6 @@
 package xadrez.pecas;
 
-import jogatabuleiro.Tabuleiro;
+import jogotabuleiro.Tabuleiro;
 import xadrez.Cor;
 import xadrez.PecaXadrez;
 
