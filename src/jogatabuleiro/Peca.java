@@ -1,10 +1,10 @@
 package jogatabuleiro;
 
 public class Peca {
-    protected Posicao position;
     private Tabuleiro tabuleiro;
+    protected Posicao position;
 
-    public Peca(Posicao position) {
+    public Peca(Tabuleiro tabuleiro) {
         this.tabuleiro = tabuleiro;
         this.position = null;
     }
