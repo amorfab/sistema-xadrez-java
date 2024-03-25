@@ -1,7 +1,10 @@
 package application;
 
+import jogatabuleiro.Posicao;
+
 public class Program {
     public static void main(String[] args) {
-        System.out.println("Bem-vindo ao jogo de xadrex!");
+        Posicao pos = new Posicao(10, 20 );
+        System.out.println(pos);
     }
 }
