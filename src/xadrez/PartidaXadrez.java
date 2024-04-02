@@ -1,5 +1,7 @@
 package xadrez;
 
+import jogotabuleiro.Peca;
+import jogotabuleiro.Posicao;
 import jogotabuleiro.Tabuleiro;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
@@ -21,6 +23,27 @@ public class PartidaXadrez {
         }
         return mat;
     }
+    public PecaXadrez executarMovimentoXadrez(PosicaoXadrez posicaoOrigem, PosicaoXadrez posicaoDestino){
+        Posicao origem = posicaoOrigem.paraPosicao();
+        Posicao destino = posicaoDestino.paraPosicao();
+        validarPosicaoOrigem(origem);
+        Peca pecaCapturada = facaMovimento(origem, destino);
+        return (PecaXadrez)pecaCapturada;
+    }
+
+    private void validarPosicaoOrigem(Posicao posicao){
+         if (!tabuleiro.ExisteUmaPeca(posicao)){
+             throw new XadrezException("Nao exite peca na posicao de origem");
+         }
+    }
+
+    private  Peca facaMovimento(Posicao origem, Posicao destino){
+        Peca p = tabuleiro.removerPeca(origem);
+        Peca pecaCapturada = tabuleiro.removerPeca(destino);
+        tabuleiro.LugarDaPeca(p, destino);
+        return pecaCapturada;
+    }
+
     private void LugarNovaPeca(char coluna, int linha, PecaXadrez peca){
         tabuleiro.LugarDaPeca(peca, new PosicaoXadrez(coluna, linha).paraPosicao());
     }
